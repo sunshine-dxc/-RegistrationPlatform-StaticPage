@@ -1,0 +1,124 @@
+/*hospital 页面样式*/
+
+/*筛选区 过滤模块*/
+.filter {
+	padding: 20px;
+	width: 100%; 
+    background: #f9f9f9;
+}
+.filter .group {
+  
+}
+
+.filter .group td{
+	padding-bottom: 20px;
+    vertical-align: top;
+    text-align: left;
+    color: #4c494b;
+}
+.filter .group td:nth-child(1){
+	width: 100px;
+	text-align: center;
+}
+.filter .group td:nth-child(2){
+	width: 100px;
+	text-align: right;
+}
+
+
+.filter .group .caption{
+	padding-top:10px;
+	text-align: center;
+	font-size: 18px;
+	color: #333;
+	
+}
+.filter .group .condition{
+	display: inline-block;
+	margin: 10px 0;
+	padding : 0 20px;
+	border-right: 1.5px solid #ddd;
+	font-size: 15px;
+	color: #4c494b;
+}
+.filter .group .condition:hover{
+	color: #60bff2;
+}
+
+.filter .group .condition_focus{
+	background: #60bff2;
+	color: #fff;
+}
+.filter .group .condition_focus:hover{
+	color: #fff;
+}
+
+
+/*数据列表*/
+.datalist{
+	margin-top: 5px;
+	min-height: 500px
+}
+.datalist .item{
+	position: relative;
+	height: 160px;
+	padding: 10px 10px 10px 250px;
+}
+.datalist .item:hover{
+	background:#f9f9f9;
+}
+.datalist .item img{
+	position: absolute;
+	top: 15px;
+	left: 10px;
+	width: 200px;
+	height: 150px;
+
+}
+.datalist .item-name{
+	padding-top: 10px;
+	height: 26px;
+	line-height: 26px;
+	font-size: 18px;
+	color: #01044a;
+	
+}
+.datalist .item-name  .item-level{
+	color: rgb(240,156,73);
+	margin-left: 50px;
+}
+.datalist .item-time,
+.datalist .item-phone,
+.datalist .item-address{
+	font-size: 14px;
+    height: 16px;
+    line-height: 16px;
+    margin-top: 10px;
+    padding-left: 30px;
+    background: url(../img/icon-tel.png) 0 0 no-repeat;
+}
+.datalist .item-time{
+    background-position-y:-36px; 
+}
+.datalist .item-address{
+	background-position-y: -18px;
+
+}
+
+.datalist .item-reserve{
+	float: right;
+	display: inline-block;
+	margin-right: 100px;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    line-height: 32px;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 4px;
+    background-color: #77aff7;
+    
+   
+   
+}
+

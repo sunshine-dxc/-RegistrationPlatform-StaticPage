@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>城市医院预约平台 - 帮助中心</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/ui.css">
+	<script src="libs/jquery-3.3.1.js"></script>
+
+	<!-- IE9浏览器兼容HTML5-->
+	<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+	<style>
+	    .banner {
+	        width:660px;
+	        height:200px;
+	        margin:100px auto;
+	        border:1px solid #808080;
+	        position:relative;
+	        overflow:hidden;
+	    }
+	    .banner .img{
+	        width:6600px;
+	        height:200px;
+	        position:absolute;
+	        left:0px;
+	        top:0px;
+	    }
+	    .banner .img img{
+	        width:660px;
+	        height:200px;
+	    }
+	    .banner .img li{
+	        float:left;
+	    }
+	    .banner .num {
+	        position:absolute;
+	        width:100%;
+	        bottom:10px;
+	        left:0px;
+	        text-align:center;
+	        font-size:0px;
+	    }
+	    .banner .num li {
+	        width:10px;
+	        height:10px;
+	        background-color:#888;
+	        border-radius:50%;
+	        display:inline-block;
+	        margin:0px 3px;
+	        cursor:pointer;}
+	    .banner .num li.on {
+	        background-color: #ff6a00;
+	    }
+	    .banner .btn {
+	        width: 30px;
+	        height: 50px;
+	        background-color: #808080;
+	        opacity: 0.5;
+	        filter:alpha(opacity:0.5);
+	        position:absolute;top:50%;
+	        margin-top:-25px;
+	        cursor:pointer;
+	        text-align:center;
+	        line-height:50px;
+	        font-size:40px;
+	        color:#fff;
+	        font-family:"宋体";
+	        display:none;
+	    }
+	    .banner .btn_l {
+	        left:0px;
+	    }
+	    .banner .btn_r {
+	        right:0px;
+	    }
+	    .banner:hover .btn {
+	        display:block;
+	    }
+	</style>
+
+</head>
+<body>
+	<!-- 顶部内容 -->
+	<div class="top">
+		<div class="wrap">
+			<div class="left">
+				<span class="phone">010-114/116114电话预约</span>
+			</div>
+			<div class="right">
+				<span class="welcome">欢迎来到城市医院预约挂号统一平台&nbsp;&nbsp;请&nbsp;&nbsp;</span>
+				<a href="javascript:void(0)" class="login">登录</a>
+				<a href="javascript:void(0)" class="register">注册</a>
+				<a href="helpCenter.html" class="helpCenter">帮助中心</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 头部信息 -->
+	<header>
+		<div class="wrap">
+			<a href="index.html" class="logo">
+				<img src="img/logo.png" alt="logo">
+			</a>
+			<div class="search ui-search">
+				<div class="ui-search-selected">医院</div>
+				<ul class="ui-search-select-list">
+					<li>科室</li>
+					<li>疾病</li>
+					<li>医院</li>
+				</ul>
+				<input type="text" name="searchContent" class="ui-search-input" placeholder="请输入搜索内容">
+				<a href="#" class="ui-search-submit">&nbsp;</a>
+			</div>
+		</div>
+	</header>
+	<!-- 导航栏 -->
+	<nav>
+		<div class="wrap">
+			<ul>
+				<li><a href="index.html" class="link">首页</a></li>
+				<li><a href="hospital.html" class="link">按医院挂号</a></li>
+				<li><a href="#" class="link">按科室挂号</a></li>
+				<li><a href="#" class="link">按疾病挂号</a></li>
+				<li><a href="#" class="link">最新公告</a></li>
+				<li><a href="#" class="link">社会知名医院</a></li>
+			</ul>
+		</div>
+	</nav>
+	
+	<!-- 内容 -->
+	<section>
+		<div class="banner">
+	    <ul class="img">
+	        <li><img src="img/banner_1.jpg" alt=""/></li>
+	        <li><img src="img/banner_2.jpg" alt="" /></li>
+	        <li><img src="img/banner_3.jpg" alt="" /></li>
+	    </ul>
+	    <ul class="num">
+
+	    </ul>
+	    <div class="btn btn_l">&lt;</div>
+	    <div class="btn btn_r">&gt;</div>
+	</div>
+	</section>
+	<!-- 底部内容 -->
+	<footer>
+		<p>Copyright  &copy;  2017慕课网版权所有</p>
+	</footer>
+	
+	<script  src="js/data.js"></script>
+	<script src="js/ui.js"></script>
+	<script>
+		$(document).ready(function () {
+		 	console.log($('head').index());
+
+	        var i = 0;
+
+	        var clone = $(".banner .img li").first().clone();//克隆第一张图片
+	        $(".banner .img").append(clone);                //复制到列表最后
+	        var size = $(".banner .img li").length;         //返回匹配元素的数量
+	        console.log(size);
+
+	        var t = setInterval(function () {
+	            i++;
+	            move();
+	            },2000);
+
+	        /*鼠标悬停事件*/
+
+	        $(".banner").hover(function () {
+	            clearInterval(t);//鼠标悬停时清除定时器
+	        }, function () {
+	            t = setInterval(function () {
+	                i++;
+	                move();
+	                }, 2000); //鼠标移出时开始定时器
+	        });
+
+
+
+	        /*向左按钮*/
+	        $(".banner .btn_l").click(function () {
+	            i--;
+	            move();
+	        });
+
+
+	        /*向右按钮*/
+	        $(".banner .btn_r").click(function () {
+	            i++;
+	            move();
+	        });
+
+	        /*移动事件*/
+	        function move() {
+	            if (i == size) {
+	                $(".banner .img").css({ left: 0 });
+	                i = 1;
+	            }
+	            if (i == -1) {
+	                $(".banner .img").css({ left: -(size - 1) * 660 });
+	                i = size - 2;
+	            }
+	            $(".banner .img").stop().animate({ left: -i * 660 }, 660);
+
+	            if (i == size - 1) {
+	                $(".banner .num li").eq(0).addClass("on").siblings().removeClass("on");
+	            } else {
+	                $(".banner .num li").eq(i).addClass("on").siblings().removeClass("on");
+	            }
+	        }
+	    });
+
+	</script>
+</body>
+</html>
+
+	

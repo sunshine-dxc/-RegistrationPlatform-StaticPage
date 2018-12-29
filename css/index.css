@@ -1,0 +1,329 @@
+/*首页内容样式*/
+
+/* 上半部分内容 */
+
+/*菜单栏*/
+.upper-menu-list{
+	float: left;
+	width: 190px;
+    height: 423px;
+    background-color: #1fa4f0;
+}
+/*图片轮播*/
+.upper-slider{
+	float: left;
+	width: 544px;
+	height: 414px;
+	margin: 8px 0 0 8px;
+	background: #f00;
+}
+/*快速查询*/
+.upper-search,
+.upper-help{
+	float: right;
+	width: 250px;
+	background: #fafafa;
+}
+.upper-search .caption,
+.upper-help .caption{
+	height: 22px;
+	padding: 15px 0;
+	text-align: center;
+}
+
+.upper-search .caption .text,
+.upper-help .caption .text{
+	display: inline-block;
+	height: 22px;
+	line-height: 22px;
+	padding-left: 28px;
+	font-size: 16px;
+	font-weight: normal;
+	background: url(../img/icon-help.png) no-repeat 0 0;
+}
+.upper-search{
+	margin-top: 8px;
+	height: 255px;
+	
+}
+.upper-search .caption .text{
+	color: #fec009;
+}
+
+.upper-search .form{
+	height: 150px;
+}
+.upper-search .form .link{
+	padding-bottom: 9px;
+	text-align: center;
+}
+.upper-search .form .link select{
+	z-index: 0;
+	border:1px solid #dcdddd;
+	padding: 2px 0;
+	width: 170px;
+	height: 26px;
+	line-height: 26px;
+	font-size: 12px;
+	color: #666;
+}
+.upper-search .submit{
+	height: 32px;
+	text-align: center;
+}
+.upper-search .submit .button{
+	width: 108px;
+	height: 33px;
+	background-color: #fecd09;
+	font-size: 14px;
+	color: #fff;
+	border-radius: 3px;
+}
+
+
+/*帮助中心*/
+.upper-help{
+	margin-top: 12px;
+	height: 146px;
+}
+.upper-help .caption .text{
+	color: #00b3ea;
+    background-position: 0 -23px;
+}
+.upper-help .list .link{
+    display: inline-block;
+    padding: 0 0 8px 26px;
+    width: 86px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    font-size: 14px;
+    color: #00b3ea;
+}
+.upper-help .list .link:hover{
+	text-decoration: underline;
+}
+
+/* 下半部分内容 */
+.lower{
+	padding: 10px 0 38px 0;
+}
+
+/*标签页内容*/
+.lower-tab{
+	float: left;
+    width: 742px;
+    height: 490px;
+    border: 1px solid #f4f6fa;
+ }
+
+/* lower-tab caption 标签样式 */
+.lower-tab .caption{
+	height: 34px;
+    line-height: 34px;
+    background-color: #f5f6fa;
+}
+.lower-tab .caption .item{
+	float: left;
+	display: block;
+    width: 112px;
+    height: 34px;
+    font-size: 16px;
+	text-align: center;
+	color: #00b3ea;
+	cursor: pointer;
+}
+
+.lower-tab .caption .item_focus{
+	background: #60bff2;
+	color: #fff;
+
+}
+
+.lower-tab .caption .item:hover{
+	background: #60bff2;
+	color: #fff;
+	opacity: 0.8;
+}
+
+/*.lower-tab .block 标签内容样式*/
+.lower-tab .block{
+	border: 1px solid #f4f6fa;
+    height: 452px;
+}
+
+/*.lower-tab .block-caption 标签内容内  标签样式 */
+.lower-tab .block-caption{
+	padding: 8px;
+    border-bottom: 1px solid #f4f6fa;
+	height: 26px;
+    line-height: 26px;
+}
+.lower-tab .block-caption-item{
+	float: left;
+	padding: 0 10px 0 10px;
+    font-size: 12px;
+    color: #4c4948;
+    cursor: pointer;
+}
+.lower-tab .block-caption-item_focus{
+	background: #60bff2;
+	color: #fff;
+}
+.lower-tab .block-caption-item:hover{
+	background: #60bff2;
+	color: #fff;
+	opacity: 0.8;
+}
+
+/*.lower-tab .block-caption 标签内容内  标签内容样式 */
+
+.lower-tab .block-content{
+	padding: 16px 12px;
+}
+
+/*医院列表 */
+.lower-tab .block-content .block-list{}
+.lower-tab .block-content .block-list .item{
+	float: left;
+	position: relative;
+    width: 216px;
+    height: 102px;
+    padding: 0 20px 10px 120px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.lower-tab .block-content .block-list .item:hover{
+	background: #eee;
+}
+.lower-tab .block-content .block-list .item img{
+	width: 110px;
+    height: 98px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.lower-tab .block-content .block-list  .item-name{
+	padding-top: 13px;
+	line-height: 21px;
+	font-weight: normal;  
+    font-size: 14px;
+    color: #036eb7;
+    
+}
+.lower-tab .block-content .block-list  .item-level{
+	float: right;
+    font-size: 12px;
+    color: #979797;
+}
+.lower-tab .block-content .block-list  .item-phone,
+.lower-tab .block-content .block-list  .item-address{
+	padding-bottom: 4px;
+	line-height: 18px;
+    color: #666;
+}
+
+
+
+/*医院文案列表*/
+.lower-tab .block-content .block-text-list{}
+
+.lower-tab .block-content .block-text-list .item{
+	float: left;
+	display: block;
+	width: 351px;
+	height: 27px;
+	padding-top: 8px;
+	border-bottom: 1px dashed #dcdddd;
+	font-size: 14px;
+	color: #666;
+}
+.lower-tab .block-content .block-text-list .item:hover{
+	color: #036eb7;
+}
+
+.lower-tab .block-content .block-text-list .item:nth-child(2n){/*:nth-child(selector) 选择器*/
+	margin-left: 13px;
+}
+.lower-tab .block-content .block-text-list .item .level{
+	float: right;
+}
+/*更多*/
+.lower-tab .block-content .block-more{
+	display: block;
+	text-align: center;
+	line-height: 55px;
+	font-size: 14px;
+	color: #5084C4;
+}
+.lower-tab .block-content .block-more:hover{
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+/*最新公告样式*/
+
+.lower-news,
+.lower-close{
+	float: right;
+	width: 248px;
+	height: 236px;
+	border: 1px solid #f4f6fa;
+	background-color: #fff;
+}
+.lower-news .caption,
+.lower-close .caption{
+	height: 38px;
+    line-height: 38px;
+    text-indent: 20px;
+    font-size: 15px;
+    font-weight: normal;
+    background-color: #f4f6fa;
+}
+.lower-news .caption .more,
+.lower-close .caption .more{
+	float: right;
+    padding-right: 22px;
+    font-size: 12px;
+    color: #868686;
+}
+.lower-news .list,
+.lower-close .list{
+	padding: 15px 20px 13px 35px;
+    line-height: 29px;
+    font-size: 12px;
+}
+
+.lower-news .link,
+.lower-close .link{
+	display: block;
+    color: #969696;
+}
+
+.lower-news .link:hover,
+.lower-close .link:hover{
+	text-decoration: underline;
+}
+
+.lower-news .caption{
+	color: #fec009;
+}
+.lower-news .list{
+	background: url("../img/list-yellow.jpg") no-repeat 17px 20px;
+}
+/*停诊公告样式*/
+.lower-close{
+	margin-top: 12px;
+}
+.lower-close .caption{
+	color: #4ab4ed;
+}
+.lower-close .list{
+	background: url("../img/list-blue.jpg") no-repeat 17px 20px;
+}

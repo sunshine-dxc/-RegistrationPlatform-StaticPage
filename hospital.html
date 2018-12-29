@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>城市医院预约平台 - 按医院挂号</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/ui.css">
+	<link rel="stylesheet" href="css/hospital.css">
+	<script src="libs/jquery-3.3.1.js"></script>
+
+	<!-- IE9浏览器兼容HTML5-->
+	<!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<!-- 顶部内容 -->
+	<div class="top">
+		<div class="wrap">
+			<div class="left">
+				<span class="phone">010-114/116114电话预约</span>
+			</div>
+			<div class="right">
+				<span class="welcome">欢迎来到城市医院预约挂号统一平台&nbsp;&nbsp;请&nbsp;&nbsp;</span>
+				<a href="javascript:void(0)" class="login">登录</a>
+				<a href="javascript:void(0)" class="register">注册</a>
+				<a href="helpCenter.html" class="helpCenter">帮助中心</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 头部信息 -->
+	<header>
+		<div class="wrap">
+			<a href="index.html" class="logo">
+				<img src="img/logo.png" alt="logo">
+			</a>
+			<div class="search ui-search">
+				<div class="ui-search-selected">医院</div>
+				<ul class="ui-search-select-list">
+					<li>科室</li>
+					<li>疾病</li>
+					<li>医院</li>
+				</ul>
+				<input type="text" name="searchContent" class="ui-search-input" placeholder="请输入搜索内容">
+				<a href="#" class="ui-search-submit">&nbsp;</a>
+			</div>
+		</div>
+	</header>
+	<!-- 导航栏 -->
+	<nav>
+		<div class="wrap">
+			<ul>
+				<li><a href="index.html" class="link">首页</a></li>
+				<li class="link_focus"><a href="hospital.html" class="link">按医院挂号</a></li>
+				<li><a href="#" class="link">按科室挂号</a></li>
+				<li><a href="#" class="link">按疾病挂号</a></li>
+				<li><a href="#" class="link">最新公告</a></li>
+				<li><a href="#" class="link">社会知名医院</a></li>
+			</ul>
+		</div>
+	</nav>
+	
+	<!-- 内容 -->
+	<section>
+		<div class="wrap">
+			<!-- 筛选区 过滤模块 -->
+		<table id="filter" class="filter">
+			
+			<tr class="group" data-search="getTypeByArrHospital">
+				<td class="caption">医院类型：</td>
+				<td><a class="condition condition_focus">全部</a></td>
+				<td class="addEle">
+				</td>
+			</tr>
+			<tr class="group" data-search="getLevelByArrHospital">
+				<td class="caption">医院等级：</td>
+				<td><a class="condition condition_focus">全部</a></td>
+				<td class="addEle"></td>
+			</tr>
+			<tr class="group" data-search="getDistinctArea">
+				<td class="caption">医院位置：</td>
+				<td><a class="condition condition_focus">全部</a></td>
+				<td class="addEle"></td>
+			</tr>
+
+			
+		</table>
+		<!-- 数据列表 模块 -->
+		<div id="data_list" class="datalist"></div>
+		<!-- 分页区 -->
+		<div id="pagination" class="ui-page">
+			
+		</div>
+		</div>
+	</section>
+	<!-- 底部内容 -->
+	<footer>
+		<p>Copyright  &copy;  2017慕课网版权所有</p>
+	</footer>
+	<script type="text/tpl"  id="datalist_item">
+		<figure class="item">
+			<img src={imgUrl} alt="xx医院"/>
+			<figcaption>
+				<h3 class="item-name">{name}<span class="item-level">{level}</span></h3>
+				<p class="item-time">放号时间：{time}</p>
+				<p class="item-phone">电话：{phone}</p>
+				<p class="item-address">地址：{address}</p>
+				<a href="#" class="item-reserve">点击预约</a>
+			</figcaption>
+		</figure>
+	</script>
+	<script  src="js/data.js"></script>
+	<script src="js/ui.js"></script>
+	<script src="js/hospital.js"></script>
+</body>
+</html>
