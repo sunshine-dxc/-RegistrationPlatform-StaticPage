@@ -1,5 +1,5 @@
 # CityHospital-StaticPage
-该项目是一个使用web前端基础知识实现城市预约挂号统一平台静态页面的web项目。
+使用web前端基础知识，实现城市预约挂号统一平台静态页面。
 
 ## 使用的技术
     HTML CSS jQuery
