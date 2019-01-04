@@ -144,10 +144,27 @@ var renderPage = function (conditionArr) {
 	
 };
 
+// 获取筛选条件
+var getConditionArr = function () {
+
+	var conditionArr = [];
+
+	$("#filter .group").each(function(index, el) {
+		var condition = $(el).attr("data-condition");
+		if (condition) {
+			conditionArr.push(condition);
+		}
+				
+	});
+
+	return conditionArr;
+};
+
+
 $(function () {
 
 	var conditionArr = [];
-		
+
 	$('header .search').UiSearch();
 	$("#filter").addEle();
 
@@ -156,20 +173,23 @@ $(function () {
 
 		$(el).on('click', '.condition', function(event) {
 
+			var $self = $(this);
+			var text = $self.text();
+			var $Tr = $self.closest(".group");
+			
+			if (text === "全部") {
+
+				$Tr.attr("data-condition",null);
+
+			}else {
+				$Tr.attr("data-condition",text);
+			}
+			
 			$('.condition',$(el)).removeClass('condition_focus');
-			$(this).addClass('condition_focus');
+			$self.addClass('condition_focus');
 
-			//初始化 conditionArr
-			conditionArr=[];
-
-			//获取选中的条件
-			$("#filter .condition_focus").each(function(index, el) {
-
-				var val = $(el).text();
-				if (val != "全部") {
-					conditionArr.push(val);
-				}
-			});
+			//重新获取筛选条件 conditionArr
+			conditionArr = getConditionArr();
 
 			renderPage(conditionArr);
 			
