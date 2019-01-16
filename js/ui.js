@@ -45,7 +45,6 @@ $.fn.UiSearch = function  () {
 		
 		*/
 	//
-
 $.fn.UiSlider = function () {
 	var ui = $(this),
 	  wrap = $(".ui-slider-wrap",ui),
@@ -59,13 +58,13 @@ $.fn.UiSlider = function () {
     var current = 0;
     var  width = items.eq(0).width();
     var clInterval;
-    wrap.on('move_prev', function(event) {
+    ui.on('move_prev', function(event) {
     	current--;
     	if (current < 0) {
     		current = size;
 
     	}
-    	wrap.triggerHandler('move_to',current);
+    	ui.triggerHandler('move_to',current);
     }).on('move_next', function(event) {
     	current++;
     	if (current > size) {
@@ -73,7 +72,7 @@ $.fn.UiSlider = function () {
     	
     	}
 
-    	wrap.triggerHandler('move_to',current);
+    	ui.triggerHandler('move_to',current);
     	
     }).on('move_to', function(event,index) {
 
@@ -83,7 +82,7 @@ $.fn.UiSlider = function () {
     }).on('auto_move', function(event) {
     	
     	clInterval = setInterval(function () {
-    		wrap.triggerHandler('move_next');
+    		ui.triggerHandler('move_next');
     	},2000);
 
     }).on('mouseover', function(event) {
@@ -93,7 +92,7 @@ $.fn.UiSlider = function () {
 
     }).on('mouseout', function(event) {
 
-    	wrap.triggerHandler('auto_move');
+    	ui.triggerHandler('auto_move');
     	return false;
     	
     }).triggerHandler('auto_move');
@@ -101,22 +100,23 @@ $.fn.UiSlider = function () {
     // 点击上一张
     btn_prev.on("click",function () {
 
-		wrap.triggerHandler("move_prev");
+		ui.triggerHandler("move_prev");
 
 	});
     //点击下一张
 	btn_next.on("click",function(){
-		wrap.triggerHandler("move_next");
+		ui.triggerHandler("move_next");
 	});
 
 	//点击圆点
 	tips.on("click",function () {
 		
 		var index = $(this).index();
-		wrap.triggerHandler("move_to",index);
+		ui.triggerHandler("move_to",index);
 		return false;
 	});
 };
+
 
 //ui-tab定规
 /*
